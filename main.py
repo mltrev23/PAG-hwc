@@ -11,7 +11,7 @@ pipe = StableDiffusionPipeline.from_pretrained(
 device="cuda"
 pipe = pipe.to(device)
 
-prompts = ["a corgi"]
+prompts = ["a dog", 'a bird', 'a knife', 'Apollo']
 
 output = pipe(
         prompts,
@@ -22,3 +22,5 @@ output = pipe(
         pag_scale=5.0,
         pag_applied_layers_index=['m0']
     ).images
+for index, image in enumerate(output):
+    image.save(f'./target/{index}.jpg')
