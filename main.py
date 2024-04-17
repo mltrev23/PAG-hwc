@@ -22,4 +22,3 @@ output = pipe(
         pag_scale=5.0,
         pag_applied_layers_index=['m0']
     ).images
-output.save()
